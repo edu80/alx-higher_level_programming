@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 #ifndef LISTS_H
 #define LISTS_H
 
