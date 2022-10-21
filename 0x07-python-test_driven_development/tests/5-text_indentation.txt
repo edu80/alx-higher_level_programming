@@ -1,0 +1,108 @@
+``5-text_indentation`` module test
+==================================
+
+Using ``text_indentation`` function
+-----------------------------------
+
+This text file contains test cases for the function ``text_indentation``.
+The function is supposed to print two new lines depending on character value.
+Characters that the function must identify are: ".", "?", ":"
+First import function to the varaible text_indentation:
+    
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
+
+Now use it:
+
+Test_0 text argument is a string with special characters
+--------------------------------------------------------
+    >>> text_indentation("Hello how are you? fine and you? I'm awesome. Look what my parent says: I'm proud of you.")
+    Hello how are you?
+    <BLANKLINE>
+    fine and you?
+    <BLANKLINE>
+    I'm awesome.
+    <BLANKLINE>
+    Look what my parent says:
+    <BLANKLINE>
+    I'm proud of you.
+    <BLANKLINE>
+
+Test_1 text argument is a string without special characters
+--------------------------------------------------------
+    >>> text_indentation("Hi I'm learning TDD to be a master")
+    Hi I'm learning TDD to be a master
+
+Test_2 text argument many special characters together
+-----------------------------------------------------
+    >>> text_indentation("Hola.?: como. estas")
+    Hola.
+    <BLANKLINE>
+    ?
+    <BLANKLINE>
+    :
+    <BLANKLINE>
+    como.
+    <BLANKLINE>
+    estas
+
+Test_3 text argument is a number
+--------------------------------
+    >>> text_indentation(3.0)
+    Traceback (most recent call last):
+    TypeError: text must be a string
+
+Test_4 text argument is a list
+--------------------------------
+    >>> text_indentation(["Hi", "I'm", "Your", "Father"])
+    Traceback (most recent call last):
+    TypeError: text must be a string
+
+Test_5 text argument is a tuple
+--------------------------------
+    >>> text_indentation(("Hello", "I'm", "a", "Tuple"))
+    Traceback (most recent call last):
+    TypeError: text must be a string
+
+Test_6 text argument is None
+--------------------------------
+    >>> text_indentation(None)
+    Traceback (most recent call last):
+    TypeError: text must be a string
+
+Test_7 text argument only have special characters
+-------------------------------------------------
+    >>> text_indentation(".:?Heloo")
+    .
+    <BLANKLINE>
+    :
+    <BLANKLINE>
+    ?
+    <BLANKLINE>
+    Heloo
+
+Test_8 text argument with special characters without spaces separated
+--------------------------------------------------------------------------
+    >>> text_indentation("Hola.como estas:bien y vos?")
+    Hola.
+    <BLANKLINE>
+    como estas:
+    <BLANKLINE>
+    bien y vos?
+    <BLANKLINE>
+
+Test_9 No argument
+------------------
+    >>> text_indentation()
+    Traceback (most recent call last):
+    TypeError: text_indentation() missing 1 required positional argument: 'text'
+
+Test_10 just special characters
+-------------------------------
+    >>> text = "?:."
+    >>> text_indentation(text)
+    ?
+    <BLANKLINE>
+    :
+    <BLANKLINE>
+    .
+    <BLANKLINE>
