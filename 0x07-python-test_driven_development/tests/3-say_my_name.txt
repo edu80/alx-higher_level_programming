@@ -1,0 +1,54 @@
+``3-say_my_name`` module test
+================================
+
+Using ``say_my_name`` function
+-------------------------------
+
+This text file contains test cases for the function ``say_my_name``.
+The function is supposed to print "My name is <first name> <last name>".
+First import function to the varaible say_my_name:
+    
+    >>> say_my_name = __import__('3-say_my_name').say_my_name
+
+Now use it:
+
+Test_1 first name argument must be string
+-----------------------------------------
+    >>> say_my_name(23, "Restrepo")
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
+
+Test_2 last name argument must be string
+-----------------------------------------
+    >>> say_my_name("Jose", 334)
+    Traceback (most recent call last):
+    TypeError: last_name must be a string
+
+Test_3 first name can't be None
+-----------------------------------------
+    >>> say_my_name(None, "Restrepo")
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
+
+Test_4 If last name is empty print nothing
+-----------------------------------------
+    >>> say_my_name("Jose")
+    My name is Jose 
+
+Test_5 empty parameters
+-----------------------------------------
+    >>> say_my_name()
+    Traceback (most recent call last):
+    TypeError: say_my_name() missing 1 required positional argument: 'first_name'
+
+Test_6 None as unique parameter
+-----------------------------------------
+    >>> say_my_name(None)
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
+
+Test_7 first parameter as tuple
+-----------------------------------------
+    >>> say_my_name(("fa", "fd"), "Dairo")
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
